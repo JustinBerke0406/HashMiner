@@ -72,31 +72,7 @@ public class Window extends JPanel {
             }
         });
 
-        // setupTextDisplay();
         setupTextGrid();
-        // setupTextField();
-
-        // this.frame.pack();
-    }
-
-    private void setupTextDisplay() {
-        GridBagConstraints c = new GridBagConstraints();
-
-        JLabel display = new JLabel("test");
-        display.setVerticalAlignment(SwingConstants.TOP);
-
-        Border border = BorderFactory.createMatteBorder(2, 0, 2, 0, Color.BLACK);
-        display.setBorder(border);
-
-        c.fill = GridBagConstraints.BOTH;
-        c.insets = new Insets(0, 0, 20, 0);
-        c.ipady = 60;
-        c.anchor = GridBagConstraints.NORTH;
-        c.weighty = 0.8;
-        c.gridx = 0;
-        c.gridy = 0;
-
-        this.frame.add(display, c);
     }
 
     private void setupTextGrid() {
@@ -124,43 +100,6 @@ public class Window extends JPanel {
 
         this.frame.addKeyListener(keyExecutor);
         this.frame.add(textDisplay, c);
-    }
-
-    private void setupTextField() {
-        GridBagConstraints c = new GridBagConstraints();
-
-        JTextField input = new JTextField();
-        // input.setPreferredSize(new Dimension(width, 10));
-        // input.setBounds((int) (width * (1-textBoxOffset)/2), height - 10, (int)
-        // (width * textBoxOffset), 10);
-
-        JLabel inputLabel = new JLabel("Input:");
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.ipady = 0;
-        c.ipadx = 0;
-        c.weightx = 1;
-        c.weighty = 0;
-        c.gridx = 0;
-        c.gridy = 1;
-
-        this.frame.add(inputLabel, c);
-
-        c = new GridBagConstraints();
-
-        Border border = BorderFactory.createLineBorder(Color.BLACK, 2);
-        input.setBorder(border);
-
-        c.fill = GridBagConstraints.BOTH;
-        c.ipady = 0;
-        c.ipadx = 0;
-        c.insets = new Insets(0, 0, 5, 0);
-        c.weightx = 1;
-        c.weighty = 0;
-        c.gridx = 0;
-        c.gridy = 2;
-
-        this.frame.add(input, c);
     }
 
     public JTable getTextDisplay() {

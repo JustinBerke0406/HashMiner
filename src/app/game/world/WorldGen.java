@@ -15,15 +15,14 @@ public class WorldGen {
         this.seed = seed;
         this.editor = editor;
 
-        pn = new PerlinNoise(seed);
+        pn = new PerlinNoise(this.seed);
     }
 
     public void generate() {
         int diff = 0;
         for (int i = 0; i < editor.getColumns(); i++) {
-            diff = (int) Math.floor(20*pn.noise(i / (1f * editor.getColumns()), (WORLD_START_HEIGHT+diff) / (1f * editor.getRows()), 0f)) / 2;
+            diff = (int) Math.floor(20*pn.noise(i / (NOISE_COEF * editor.getColumns()), (WORLD_START_HEIGHT+diff) / (NOISE_COEF * editor.getRows()), 0f)) / 2;
 
-            editor.setText(WORLD_START_HEIGHT+diff, i, "#");
             editor.drawLine(i, WORLD_START_HEIGHT+diff, i, editor.getRows()-1, "#");
         }
     }
