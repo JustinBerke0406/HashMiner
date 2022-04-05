@@ -140,4 +140,12 @@ public class TableEditor {
 
         return this;
     }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
 }

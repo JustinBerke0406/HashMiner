@@ -27,13 +27,15 @@ public class Window extends JPanel {
 
     /**
      * Creates a new Window object.
-     * <br><br>
+     * <br>
+     * <br>
      * <i>*Defaults gridWidth and gridHeight to the actual window size</i>
-     * <br><br>
+     * <br>
+     * <br>
      * 
-     * @param width Width of the screen in pixels
-     * @param height Height of the screen in pixels
-     * @param title Window name
+     * @param width     Width of the screen in pixels
+     * @param height    Height of the screen in pixels
+     * @param title     Window name
      * @param resizable If the window can be resized
      * 
      * 
@@ -57,8 +59,8 @@ public class Window extends JPanel {
 
     private void setup() {
         this.frame.setSize(this.width, this.height);
-        //revalidate();
-        //this.frame.getContentPane().add(this);
+        // revalidate();
+        // this.frame.getContentPane().add(this);
         this.frame.setDefaultCloseOperation(3);
         this.frame.setResizable(this.resizable);
         this.frame.setLayout(new GridBagLayout());
@@ -70,16 +72,16 @@ public class Window extends JPanel {
             }
         });
 
-        //setupTextDisplay();
+        // setupTextDisplay();
         setupTextGrid();
-        //setupTextField();
+        // setupTextField();
 
-        //this.frame.pack();
+        // this.frame.pack();
     }
 
     private void setupTextDisplay() {
         GridBagConstraints c = new GridBagConstraints();
-        
+
         JLabel display = new JLabel("test");
         display.setVerticalAlignment(SwingConstants.TOP);
 
@@ -99,7 +101,7 @@ public class Window extends JPanel {
 
     private void setupTextGrid() {
         GridBagConstraints c = new GridBagConstraints();
-        
+
         textDisplay = new JTable(50, 50);
         textDisplay.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         textDisplay.setShowGrid(false);
@@ -112,7 +114,7 @@ public class Window extends JPanel {
 
         c.fill = GridBagConstraints.BOTH;
         c.insets = new Insets(0, 0, 20, 0);
-        //c.ipady = 60;
+        // c.ipady = 60;
         c.anchor = GridBagConstraints.NORTH;
         c.weighty = 0.8;
         c.gridx = 0;
@@ -126,10 +128,11 @@ public class Window extends JPanel {
 
     private void setupTextField() {
         GridBagConstraints c = new GridBagConstraints();
-        
+
         JTextField input = new JTextField();
-        //input.setPreferredSize(new Dimension(width, 10));
-        //input.setBounds((int) (width * (1-textBoxOffset)/2), height - 10, (int) (width * textBoxOffset), 10);
+        // input.setPreferredSize(new Dimension(width, 10));
+        // input.setBounds((int) (width * (1-textBoxOffset)/2), height - 10, (int)
+        // (width * textBoxOffset), 10);
 
         JLabel inputLabel = new JLabel("Input:");
 
@@ -220,4 +223,3 @@ public class Window extends JPanel {
         this.frame = frame;
     }
 }
-
