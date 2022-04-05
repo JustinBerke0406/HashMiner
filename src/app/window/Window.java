@@ -2,11 +2,7 @@ package app.window;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.event.MouseInputListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 
-import app.console.TableEditor;
 import app.console.events.KeyExecutor;
 
 import java.awt.*;

@@ -1,5 +1,7 @@
 package app.console;
 
+import java.util.function.BiConsumer;
+
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -115,6 +117,14 @@ public class TableEditor {
             drawLine(coords[0], coords[1], coords[coords.length-2], coords[coords.length-1], text);
         }
 
+        return this;
+    }
+
+    public TableEditor applyFunctionToAll(BiConsumer<Integer, Integer> func) {
+        for (int x = 0; x < columns; x++)
+            for (int y = 0; y < rows; y++)
+                func.accept(x, y);
+        
         return this;
     }
 
